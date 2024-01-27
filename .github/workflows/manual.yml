@@ -19,6 +19,6 @@ jobs:
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           application-id: BDaebUN8PDcVt1UHLesynA-a
-          # environment-id: dXU86XnNcTUF73VaMMyX6Q-e
-          plan-labels: deploy
+          environment-id: dXU86XnNcTUF73VaMMyX6Q-e
+          plan-labels: Github
           continue-on-failure: true
