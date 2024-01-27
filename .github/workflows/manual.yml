@@ -5,6 +5,7 @@ name: mabl Simple Example
 jobs:
   test:
     name: mabl Test
+    environment: Mabl
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
