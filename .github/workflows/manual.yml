@@ -8,17 +8,16 @@ jobs:
     environment: Mabl
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Functional test deployment
-        id: mabl-test-deployment
-        uses: mablhq/github-run-tests-action@v1
-        env:
-          # Use a "CI/CD Integration" type of mabl API key
-          MABL_API_KEY: ${{ secrets.MABL_API_KEY }}
-          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v4
         with:
-          application-id: BDaebUN8PDcVt1UHLesynA-a
-          environment-id: dXU86XnNcTUF73VaMMyX6Q-e
-          plan-labels: Github
-          continue-on-failure: true
+          node-version: '18.x'
+
+      - name: Functional test deployment in CLI
+        uses: mablhq/setup-mabl-cli@v1
+        with:
+          workspace: lw6LcFr2VZdR0609up8Jcg-w
+        env:
+          MABL_API_KEY: O6LdVomqVhoeOrchEVveOg
+
+      - name: Run Tests
+        run: mabl tests run --id NP8G6QSyhSDdD6ZIwEKK8A-j --headless
