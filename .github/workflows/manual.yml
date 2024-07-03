@@ -20,4 +20,4 @@ jobs:
           MABL_API_KEY: O6LdVomqVhoeOrchEVveOg
 
       - name: Run Tests
-        run: mabl tests run --id pFxi950jddHnVtBQ9hvcLg-j --headless -e dXU86XnNcTUF73VaMMyX6Q-e -u sandbox.mabl.com
+        run: mabl tests run --id hSYHlnF8do2gmjvVW52VTA-j --headless -u sandbox.mabl.com
